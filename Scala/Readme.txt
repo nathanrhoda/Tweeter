@@ -1,0 +1,1 @@
+This is a scala project to model a twitter feed
