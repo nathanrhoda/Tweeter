@@ -50,8 +50,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="FeedServiceTest.cs" />
+    <Compile Include="TweetsServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\tweet.txt" />
+    <Content Include="Files\user.txt" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
