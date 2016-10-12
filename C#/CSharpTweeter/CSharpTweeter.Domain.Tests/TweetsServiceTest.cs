@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CSharpTweeter.Domain.Tests
@@ -17,12 +18,9 @@ namespace CSharpTweeter.Domain.Tests
 
     public class TweetsService
     {
-        public object GetTweets()
+        public List<object> GetTweets()
         {
-            return new object();  
-            
-            
-                      
+            return new List<object>();                                                
         }
     }
 }
