@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTweeter.Console", "CSharpTweeter.Console\CSharpTweeter.Console.csproj", "{F0922C47-C24F-4CDC-914F-D557221BAACC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{30EEA8D4-BBD3-4171-AA91-4C791187BD4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C0939073-648B-4A4D-B3BB-65E6046CAD16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTweeter.Domain.Tests", "CSharpTweeter.Domain.Tests\CSharpTweeter.Domain.Tests.csproj", "{C6A887D0-8998-48FF-8154-0D5C8B54C01C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F0922C47-C24F-4CDC-914F-D557221BAACC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0922C47-C24F-4CDC-914F-D557221BAACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0922C47-C24F-4CDC-914F-D557221BAACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0922C47-C24F-4CDC-914F-D557221BAACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C6A887D0-8998-48FF-8154-0D5C8B54C01C} = {30EEA8D4-BBD3-4171-AA91-4C791187BD4E}
+	EndGlobalSection
+EndGlobal
