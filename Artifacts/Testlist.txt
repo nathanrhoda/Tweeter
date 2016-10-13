@@ -1,9 +1,12 @@
-1) GetTweets Where Tweets Exist
-2) GetTweets Where No Tweets Exist
-3) Read Tweets From File
-4) Read Users From File 
-5) Get Followers By User Where there are followers
-6) Get Followers By User Where There Are No Followers
-7) List Followers Tweets By User Where There Are Tweets
-8) Do Not List Following user if he has no tweets 
+* GetTweets Where Tweets Exist 
+* Initialize Where Input Is Throws Exception
+Initialize Where Input Is Valid
+Read From File And Build Users Object
+Read From File And Build Tweets Object
+Read Tweets From File
+Read Users From File 
+Get Followers By User Where there are followers
+Get Followers By User Where There Are No Followers
+List Followers Tweets By User Where There Are Tweets
+Do Not List Following user if he has no tweets 
 

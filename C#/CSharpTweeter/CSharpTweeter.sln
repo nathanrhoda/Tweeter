@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C09390
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTweeter.Domain.Tests", "CSharpTweeter.Domain.Tests\CSharpTweeter.Domain.Tests.csproj", "{C6A887D0-8998-48FF-8154-0D5C8B54C01C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTweeter.Domain", "CSharpTweeter.Domain\CSharpTweeter.Domain.csproj", "{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,11 +27,16 @@ Global
 		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6A887D0-8998-48FF-8154-0D5C8B54C01C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C6A887D0-8998-48FF-8154-0D5C8B54C01C} = {30EEA8D4-BBD3-4171-AA91-4C791187BD4E}
+		{E6FA6375-DAAA-43C0-A5CC-D17FCE497DC1} = {C0939073-648B-4A4D-B3BB-65E6046CAD16}
 	EndGlobalSection
 EndGlobal
