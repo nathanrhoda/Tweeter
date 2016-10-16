@@ -19,7 +19,7 @@ namespace CSharpTweeter.Domain
 
                     foreach (var tweetingUser in userParsed[1].Trim(' ', '\r').Split(','))
                     {
-                        var tweeter = GetTweeter(tweetingUser, follower);
+                        var tweeter = GetUser(tweetingUser, follower);
                         userList.AddUser(tweeter);
                     }
                 }
@@ -27,7 +27,7 @@ namespace CSharpTweeter.Domain
             return userList;
         }
 
-        private static User GetTweeter(string tweetingUser, User follower)
+        private static User GetUser(string tweetingUser, User follower)
         {
             var tweeter = new User
             {Name = tweetingUser.Trim(' ', '\r')};

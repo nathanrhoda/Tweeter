@@ -18,16 +18,14 @@ namespace CSharpTweeter.Console
             var userFilePath = ConfigurationManager.AppSettings["UserFilePath"];
 
 
-            //var userService = new UserService();
-            //var users = userService.GetUsers();
+            var userService = new UserService(userFilePath);
+            var users = userService.GetUsers();
 
-            //foreach (var user in users)
-            //{
-            //    var tweetService = new TweetsService();
-            //    var feed = tweetService.GetFeedByUser(user);
-            //    System.Console.WriteLine(feed.ToString());
-            //}
+            foreach (var user in users.Users)
+            {
 
+                System.Console.WriteLine(user.Name);
+            }
 
             System.Console.ReadLine();
 
