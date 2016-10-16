@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CSharpTweeter.Domain.Tests
 {
     [TestClass]
-    public class FeedBuilderTest
+    public class TweetsBuilderTest
     {
         private string GetTextFromFile(string path)
         {

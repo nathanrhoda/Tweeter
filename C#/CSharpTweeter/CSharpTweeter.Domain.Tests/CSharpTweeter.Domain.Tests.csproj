@@ -54,7 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FeedServiceTest.cs" />
-    <Compile Include="FeedBuilderTest.cs" />
+    <Compile Include="TweetsBuilderTest.cs" />
     <Compile Include="TweetTests.cs" />
     <Compile Include="UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

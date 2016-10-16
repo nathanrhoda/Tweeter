@@ -71,16 +71,5 @@ namespace CSharpTweeter.Domain.Tests
             Assert.AreEqual(3, feed.Items.Count);
         }
 
-        //[TestMethod]
-        //public void GetFeedBy_WhereUserHasOneTweetAndIsFollowingOnePersonWithNoTweets_ReturnsOneTweet()
-        //{
-            
-
-        //}
-
-        //[TestMethod]
-        //public void GetFeedBy_WhereUserHasNoTweetsAndIsFollowingNoOne_ReturnsEmptyFeed()
-        //{
-        //}
     }
 }
