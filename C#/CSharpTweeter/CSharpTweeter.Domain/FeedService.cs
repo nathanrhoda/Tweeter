@@ -16,11 +16,22 @@ namespace CSharpTweeter.Domain
             this._tweetFilePath = tweetFilePath;
         }
 
-        public object GetFeedBy(User user)
+        public Feed GetFeedBy(User user)
         {
+            var feed = new Feed();
             var fileText = File.ReadAllText(_tweetFilePath);
-            throw new NotImplementedException("Implement Get Feeds By User");
+            var tweets = TweetsBuilder.Create(fileText);
 
+            foreach (var tweet in tweets.Tweets)
+            {
+                if (tweet.Name == user.Name || user.Followers.Users.Exists(x=>x.Name.Equals(tweet.Name)))
+                {
+                    feed.Items.Add(tweet);
+                }
+            }
+            
+
+            return feed;
         }
     }
 }

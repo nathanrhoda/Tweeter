@@ -21,14 +21,17 @@ namespace CSharpTweeter.Console
             var userService = new UserService(userFilePath);
             var users = userService.GetUsers();
 
-            foreach (var user in users.Users)
+            foreach (var user in users.Users.OrderBy(x => x.Name))
             {
                 System.Console.WriteLine(user.Name);
 
                 var feedService = new FeedService(tweetFilePath);
-                var feed = feedService.GetFeedBy(user);
+                var feeds = feedService.GetFeedBy(user);
 
-                System.Console.WriteLine(feed.ToString());
+                foreach (var feed in feeds.Items)
+                {
+                    System.Console.WriteLine(feed);
+                }
             }
 
             System.Console.ReadLine();

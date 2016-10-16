@@ -8,8 +8,8 @@ namespace CSharpTweeter.Domain.Tests
     [TestClass]
     public class FeedServiceTest
     {
-        [TestMethod, Ignore]
-        public void GetTweetsByUser_WhereTweetsExists_ReturnsTweets()
+        [TestMethod]
+        public void GetFeedBy_WhereTweetsExists_ReturnsTweets()
         {
             var user = new User();
             var filePath = ConfigurationManager.AppSettings["TweetFilePath"];
@@ -19,11 +19,31 @@ namespace CSharpTweeter.Domain.Tests
 
             Assert.IsNotNull(feed);
         }
+
         [TestMethod]
         [ExpectedException(typeof(FileNotFoundException))]
         public void Initialize_WhereInputIsNotValid_ThrowsException()
         {
             var service = new FeedService("");
+        }
+
+        [TestMethod]
+        public void GetFeedBy_WhereUserHasOneTweet_ReturnsFeedWithOneTweet()
+        {
+            var user = new User
+            {
+                Name = "Alan"
+            };
+
+            var filePath = ConfigurationManager.AppSettings["OneTweetPath"];
+
+            var service = new FeedService(filePath);
+
+            var feed = service.GetFeedBy(user);
+
+            Assert.IsNotNull(feed);
+            Assert.AreEqual(1, feed.Items.Count);
+
         }
     }
 }
