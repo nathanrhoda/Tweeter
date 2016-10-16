@@ -4,12 +4,12 @@ using System.IO;
 
 namespace CSharpTweeter.Domain
 {
-    public class TweetsService
+    public class UserService
     {
         private string _tweetsFilePath;
         private string _userFilePath;
 
-        public TweetsService(string tweetsFilePath, string userFilePath)
+        public UserService(string tweetsFilePath, string userFilePath)
         {
             this._tweetsFilePath = tweetsFilePath;
             this._userFilePath = userFilePath;

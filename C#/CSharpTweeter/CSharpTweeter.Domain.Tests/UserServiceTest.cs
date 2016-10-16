@@ -7,7 +7,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CSharpTweeter.Domain.Tests
 {
     [TestClass]
-    public class TweetsServiceTest
+    public class UserServiceTest
     {
         [TestMethod, Ignore]
         public void GetTweets_WhereFeedsExist_ReturnsMoreThanZeroTweets()
@@ -40,16 +40,16 @@ namespace CSharpTweeter.Domain.Tests
 
 public static class TweetsServiceFactory
 {
-    public static TweetsService InvalidInputFiles()
+    public static UserService InvalidInputFiles()
     {
-        return new TweetsService("", "");
+        return new UserService("", "");
     }
 
-    public static TweetsService Tweets()
+    public static UserService Tweets()
     {
         var tweetsFilePath = ConfigurationManager.AppSettings["TweetFilePath"];
         var userFilePath = ConfigurationManager.AppSettings["UserFilePath"];
-        return new TweetsService(tweetsFilePath, userFilePath);
+        return new UserService(tweetsFilePath, userFilePath);
     }
 
 }
