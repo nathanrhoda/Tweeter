@@ -53,12 +53,16 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="TweetServiceTest.cs" />
+    <Compile Include="FeedServiceTest.cs" />
+    <Compile Include="FeedBuilderTest.cs" />
     <Compile Include="UserServiceTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\onetweet.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\twofollower.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

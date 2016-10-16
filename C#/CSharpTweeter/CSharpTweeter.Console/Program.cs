@@ -25,10 +25,10 @@ namespace CSharpTweeter.Console
             {
                 System.Console.WriteLine(user.Name);
 
-                var tweetService = new TweetService(tweetFilePath);
-                //var feed = tweetService.GetFeedBy(user);
+                var feedService = new FeedService(tweetFilePath);
+                var feed = feedService.GetFeedBy(user);
 
-                //System.Console.WriteLine(feed.ToString());
+                System.Console.WriteLine(feed.ToString());
             }
 
             System.Console.ReadLine();

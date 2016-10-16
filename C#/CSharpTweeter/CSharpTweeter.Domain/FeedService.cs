@@ -3,11 +3,11 @@ using System.IO;
 
 namespace CSharpTweeter.Domain
 {
-    public class TweetService
+    public class FeedService
     {
         private string _tweetFilePath;
         
-        public TweetService(string tweetFilePath)
+        public FeedService(string tweetFilePath)
         {
             if (!File.Exists(tweetFilePath))
             {
