@@ -58,6 +58,9 @@
     <Compile Include="UserBuilderTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Files\twofollower.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\tweet.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

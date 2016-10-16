@@ -43,7 +43,7 @@ namespace CSharpTweeter.Domain
             {
                 var user = new User
                 {
-                    Name = follower
+                    Name = follower.Replace(" ", "")
                 };
                 followerList.Add(user);
             }

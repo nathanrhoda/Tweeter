@@ -37,6 +37,22 @@ namespace CSharpTweeter.Domain.Tests
             Assert.AreEqual("Ward", user.Name);
             Assert.AreEqual("Alan", follower.Name);
 
-        }        
+        }
+
+        [TestMethod]
+        public void Create_WhereTwoFollowerExists_ReturnsUserWithTwoFollowers()
+        {
+            string users = GetUsersFromFile(ConfigurationManager.AppSettings["TwoFollowerPath"]);
+            var userList = UserBuilder.Create(users);
+
+            var user = userList[0];
+            var follower1 = user.Followers[0];
+            var follower2 = user.Followers[1];
+
+            Assert.AreEqual("Ward", user.Name);
+            Assert.AreEqual("Martin", follower1.Name);
+            Assert.AreEqual("Alan", follower2.Name);
+
+        }
     }
 }
