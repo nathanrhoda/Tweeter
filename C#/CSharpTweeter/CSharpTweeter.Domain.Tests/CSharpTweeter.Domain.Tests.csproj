@@ -61,6 +61,9 @@
     <Content Include="Files\tweet.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Files\onefollower.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Files\user.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
