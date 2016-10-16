@@ -7,6 +7,6 @@
 * Read Tweets From File
 * Get Followers By User Where there are followers
 * Get Followers By User Where There Are No Followers
-List Followers Tweets By User Where There Are Tweets
-Do Not List Following user if he has no tweets 
+* List Followers Tweets By User Where There Are Tweets
+* Do Not List Following user if he has no tweets 
 

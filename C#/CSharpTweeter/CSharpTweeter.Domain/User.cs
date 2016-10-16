@@ -18,11 +18,6 @@ namespace CSharpTweeter.Domain
 
 
 
-        public override string ToString()
-        {
-            return this.Name;
-        }
-
         public override bool Equals(object obj)
         {
             return Name.Equals(((User)obj).Name);
