@@ -3,10 +3,10 @@
 * Initialize Where Input Is Valid
 * Read From File And Build Users Object
 * Read Users From File 
-Read From File And Build Tweets Object
-Read Tweets From File
-Get Followers By User Where there are followers
-Get Followers By User Where There Are No Followers
+* Read From File And Build Tweets Object
+* Read Tweets From File
+* Get Followers By User Where there are followers
+* Get Followers By User Where There Are No Followers
 List Followers Tweets By User Where There Are Tweets
 Do Not List Following user if he has no tweets 
 

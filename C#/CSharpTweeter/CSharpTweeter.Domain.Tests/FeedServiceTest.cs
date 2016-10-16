@@ -45,5 +45,42 @@ namespace CSharpTweeter.Domain.Tests
             Assert.AreEqual(1, feed.Items.Count);
 
         }
+
+        [TestMethod]
+        public void GetFeedBy_WhereUserHasTwoTweetsAndPersonHisFollowingHasOneTweet_ReturnsFeedWithThreeTweets()
+        {
+            var user = new User
+            {
+                Name = "Alan",                
+            };
+
+            var follower = new User
+            {
+                Name = "Ward"
+            };
+
+            user.Followers.AddUser(follower);
+
+            var filePath = ConfigurationManager.AppSettings["TweetFilePath"];
+
+            var service = new FeedService(filePath);
+
+            var feed = service.GetFeedBy(user);
+
+            Assert.IsNotNull(feed);
+            Assert.AreEqual(3, feed.Items.Count);
+        }
+
+        //[TestMethod]
+        //public void GetFeedBy_WhereUserHasOneTweetAndIsFollowingOnePersonWithNoTweets_ReturnsOneTweet()
+        //{
+            
+
+        //}
+
+        //[TestMethod]
+        //public void GetFeedBy_WhereUserHasNoTweetsAndIsFollowingNoOne_ReturnsEmptyFeed()
+        //{
+        //}
     }
 }
