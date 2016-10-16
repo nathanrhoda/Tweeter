@@ -1,6 +1,6 @@
 * GetTweets Where Tweets Exist 
 * Initialize Where Input Is Throws Exception
-Initialize Where Input Is Valid
+* Initialize Where Input Is Valid
 Read From File And Build Users Object
 Read From File And Build Tweets Object
 Read Tweets From File
