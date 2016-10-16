@@ -59,7 +59,7 @@ namespace CSharpTweeter.Domain.Tests
                 Name = "Ward"
             };
 
-            user.Followers.AddUser(follower);
+            user.Following.AddUser(follower);
 
             var filePath = ConfigurationManager.AppSettings["TweetFilePath"];
 

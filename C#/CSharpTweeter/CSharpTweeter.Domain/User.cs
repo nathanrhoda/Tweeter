@@ -11,10 +11,10 @@ namespace CSharpTweeter.Domain
     {
         public User()
         {
-            Followers = new UserList();
+            Following = new UserList();
         }
         public string Name { get; set; }
-        public UserList Followers { get; private set; }
+        public UserList Following { get; private set; }
 
 
 

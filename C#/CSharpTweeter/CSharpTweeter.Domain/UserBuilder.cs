@@ -15,33 +15,37 @@ namespace CSharpTweeter.Domain
                 {
 
                     var userParsed = userText.Replace(" follows ", "|").Split('|');
-                    var follower = GetFollower(userParsed[0], userList);
-
-                    foreach (var tweetingUser in userParsed[1].Trim(' ', '\r').Split(','))
+                    var user = GetUser(userParsed[0]);
+                    userList.AddUser(user);
+                    foreach (var usersBeingFollowed in userParsed[1].Trim(' ', '\r').Split(','))
                     {
-                        var tweeter = GetUser(tweetingUser, follower);
-                        userList.AddUser(tweeter);
+                        var followed = new User
+                        {
+                            Name = usersBeingFollowed.Trim(' ', '\r')                        
+                        };
+
+                        userList.AddUser(followed);
+                        AddUsersBeingFollowed(usersBeingFollowed, user);                        
                     }
                 }
             }
             return userList;
         }
 
-        private static User GetUser(string tweetingUser, User follower)
+        private static User GetUser(string userText)
         {
-            var tweeter = new User
-            {Name = tweetingUser.Trim(' ', '\r')};
-
-            tweeter.Followers.AddUser(follower);
-            return tweeter;
+            var user = new User
+            { Name = userText.Trim(' ', '\r') };
+        
+            return user;
         }
 
-        private static User GetFollower(string userParsed, UserList userList)
+        private static User AddUsersBeingFollowed(string usersBeingFollowed, User user)
         {
             var follower = new User
-            {Name = userParsed.Trim(' ', '\r')};
-            userList.AddUser(follower);
-            return follower;
+            { Name = usersBeingFollowed.Trim(' ', '\r') };
+            user.Following.AddUser(follower);
+            return user;
         }
     }
 }

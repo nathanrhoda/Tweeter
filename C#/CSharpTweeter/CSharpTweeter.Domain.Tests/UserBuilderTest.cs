@@ -31,13 +31,13 @@ namespace CSharpTweeter.Domain.Tests
             string users = GetUsersFromFile(ConfigurationManager.AppSettings["OneFollowerPath"]);
             var userList = UserBuilder.Create(users);
 
-            var user = userList[1];
-            var follower = user.Followers[0];
+            var user = userList[0];
+            var following = user.Following[0];
 
             Assert.AreEqual(2, userList.Count);
-            Assert.AreEqual("Ward", follower.Name);
-            Assert.AreEqual("Alan", user.Name);
-
+            Assert.AreEqual("Ward", user.Name);
+            Assert.AreEqual("Alan", following.Name);
+            Assert.AreEqual(0, following.Following.Count);
         }
 
         [TestMethod]
@@ -47,17 +47,17 @@ namespace CSharpTweeter.Domain.Tests
             var userList = UserBuilder.Create(users);
 
             var ward = userList[0];
-            var alan = userList[2];
             var martin = userList[1];
-            var wardFollowingAlan = alan.Followers[0];
-            var wardFollowingMartin = martin.Followers[0];
+            var alan = userList[2];
 
-            Assert.AreEqual(3, userList.Count);
-            Assert.AreEqual("Alan", alan.Name);
-            Assert.AreEqual("Martin", martin.Name);
-            Assert.AreEqual("Ward", wardFollowingAlan.Name);
-            Assert.AreEqual("Ward", wardFollowingMartin.Name);
-            Assert.AreEqual(0, ward.Followers.Count);
+            var alanFollowingCount = alan.Following.Count;
+            var martingFollowingCount = martin.Following.Count;
+            var wardFollowingCount = ward.Following.Count;
+
+            Assert.AreEqual(3, userList.Count);            
+            Assert.AreEqual(0, alanFollowingCount);
+            Assert.AreEqual(0, martingFollowingCount);
+            Assert.AreEqual(2, wardFollowingCount);
 
         }
     }

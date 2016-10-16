@@ -12,8 +12,7 @@ namespace CSharpTweeter.Console
     {
         static void Main(string[] args)
         {
-            System.Console.WriteLine("Tweet Tweet");
-
+            
             var tweetFilePath = ConfigurationManager.AppSettings["TweetFilePath"];
             var userFilePath = ConfigurationManager.AppSettings["UserFilePath"];
 
@@ -22,7 +21,7 @@ namespace CSharpTweeter.Console
             var users = userService.GetUsers();
 
             foreach (var user in users.Users.OrderBy(x => x.Name))
-            {
+            {                
                 System.Console.WriteLine(user.Name);
 
                 var feedService = new FeedService(tweetFilePath);
@@ -30,8 +29,12 @@ namespace CSharpTweeter.Console
 
                 foreach (var feed in feeds.Items)
                 {
-                    System.Console.WriteLine(feed);
+                    System.Console.WriteLine("\t" + feed);
+                    System.Console.WriteLine("\r\n");
                 }
+
+                System.Console.WriteLine("\r\n");
+
             }
 
             System.Console.ReadLine();

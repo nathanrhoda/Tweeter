@@ -24,7 +24,7 @@ namespace CSharpTweeter.Domain
 
             foreach (var tweet in tweets.Tweets)
             {
-                if (tweet.Name == user.Name || user.Followers.Users.Exists(x=>x.Name.Equals(tweet.Name)))
+                if (tweet.Name == user.Name || user.Following.Users.Exists(x=>x.Name.Equals(tweet.Name)))
                 {
                     feed.Items.Add(tweet);
                 }
