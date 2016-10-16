@@ -5,62 +5,44 @@ namespace CSharpTweeter.Domain
 {
     public class UserBuilder
     {
-        public static List<User> Create(string users)
+        public static UserList Create(string users)
         {
-            var userList = new List<User>();
-            
+            var userList = new UserList();
+
             foreach (var userText in users.Split('\n'))
             {
                 if (!String.IsNullOrEmpty(userText))
                 {
-                    var user = GetUser(userText);                                        
-                    var followers = GetFollowers(userText);
-                    foreach (var follower in followers)
-                    {
-                        if (!user.Followers.Exists(x => x.Equals(follower)))
-                        {
-                            user.Followers.Add(follower);
-                        }
-                    }
 
-                    if (!userList.Exists(x => x.Equals(user)))
+                    var userParsed = userText.Replace(" follows ", "|").Split('|');
+                    var follower = GetFollower(userParsed[0], userList);
+
+                    foreach (var tweetingUser in userParsed[1].Trim(' ', '\r').Split(','))
                     {
-                        userList.Add(user);
+                        var tweeter = GetTweeter(tweetingUser, follower);
+                        userList.AddUser(tweeter);
                     }
-                }                
+                }
             }
             return userList;
         }
 
-        private static List<User> GetFollowers(string userText)
+        private static User GetTweeter(string tweetingUser, User follower)
         {
-            var followerList = new List<User>();
-            var followersText = userText.Substring(userText.IndexOf(" follows ", StringComparison.Ordinal))
-                    .Replace(" follows ", "")
-                    .TrimEnd('\r');
+            var tweeter = new User
+            {Name = tweetingUser.Trim(' ', '\r')};
 
-            foreach (var follower in followersText.Split(','))
-            {
-                var user = new User
-                {
-                    Name = follower.Replace(" ", "")
-                };
-                followerList.Add(user);
-            }
-
-            return followerList;
-
+            tweeter.Followers.AddUser(follower);
+            return tweeter;
         }
 
-        private static User GetUser(string userText)
+        private static User GetFollower(string userParsed, UserList userList)
         {
-            var userString = userText.Substring(0, userText.IndexOf(" follows", StringComparison.Ordinal));
-            var user = new User
-            {
-                Name = userString
-            }; 
-            return user;
+            var follower = new User
+            {Name = userParsed.Trim(' ', '\r')};
+            userList.AddUser(follower);
+            return follower;
         }
-    }   
+    }
 }
 
