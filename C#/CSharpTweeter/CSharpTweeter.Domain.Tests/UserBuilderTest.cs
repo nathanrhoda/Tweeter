@@ -8,14 +8,22 @@ namespace CSharpTweeter.Domain.Tests
     [TestClass]
     public class UserBuilderTest
     {
-
         private string GetUsersFromFile(string path)
-        {            
+        {
             var fileText = File.ReadAllText(path);
             return fileText;
         }
 
-
+        /// <summary>
+        /// <file>
+        ///  <key>UserFilePath</key>
+        ///  <text>         
+        ///  Ward follows Alan
+        ///  Alan follows Martin
+        ///  Ward follows Martin, Alan
+        /// </text>
+        /// </file>
+        /// </summary>
         [TestMethod]
         public void Create_WhereInputHasThreeUniqueUsers_ReturnsThreeUsers()
         {
@@ -25,22 +33,37 @@ namespace CSharpTweeter.Domain.Tests
             Assert.AreEqual(3, usersList.Count);
         }
 
-        [TestMethod]
+        /// <summary>
+        /// <file>
+        ///  <key>OneFollowerPath</key>
+        ///  <text>         
+        ///  Ward follows Alan
+        /// </text>
+        /// </file>
+        /// </summary>
+        [TestMethod]        
         public void Create_WhereTwoUsersExists_ReturnsTwoUserOneAsAFollower()
         {
             string users = GetUsersFromFile(ConfigurationManager.AppSettings["OneFollowerPath"]);
             var userList = UserBuilder.Create(users);
 
-            var user = userList[0];
-            var following = user.Following[0];
+            var ward = userList[0];
+            var alan = userList[1];
 
             Assert.AreEqual(2, userList.Count);
-            Assert.AreEqual("Ward", user.Name);
-            Assert.AreEqual("Alan", following.Name);
-            Assert.AreEqual(0, following.Following.Count);
+            Assert.AreEqual(1, ward.Following.Count);
+            Assert.AreEqual(0, alan.Following.Count);
         }
 
-        [TestMethod]
+        /// <summary>
+        /// <file>
+        ///  <key>TwoFollowerPath</key>
+        ///  <text>         
+        ///  Ward follows Martin, Alan
+        /// </text>
+        /// </file>
+        /// </summary>        
+        [TestMethod]        
         public void Create_WithThreeUsersExistsWithOneUserFollowingTwoUsers_ReturnsThreeUsersTwoBeingOneFollowedOneWithNoFollowers()
         {
             string users = GetUsersFromFile(ConfigurationManager.AppSettings["TwoFollowerPath"]);
@@ -50,14 +73,10 @@ namespace CSharpTweeter.Domain.Tests
             var martin = userList[1];
             var alan = userList[2];
 
-            var alanFollowingCount = alan.Following.Count;
-            var martingFollowingCount = martin.Following.Count;
-            var wardFollowingCount = ward.Following.Count;
-
-            Assert.AreEqual(3, userList.Count);            
-            Assert.AreEqual(0, alanFollowingCount);
-            Assert.AreEqual(0, martingFollowingCount);
-            Assert.AreEqual(2, wardFollowingCount);
+            Assert.AreEqual(3, userList.Count);
+            Assert.AreEqual(0, alan.Following.Count);
+            Assert.AreEqual(0, martin.Following.Count);
+            Assert.AreEqual(2, ward.Following.Count);
 
         }
     }

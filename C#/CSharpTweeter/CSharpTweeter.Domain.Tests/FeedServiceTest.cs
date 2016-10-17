@@ -8,6 +8,16 @@ namespace CSharpTweeter.Domain.Tests
     [TestClass]
     public class FeedServiceTest
     {
+        /// <summary>
+        /// <file>
+        ///  <key>TweetFilePath</key>
+        ///  <text>         
+        ///  Alan> If you have a procedure with 10 parameters, you probably missed some.
+        ///  Ward> There are only two hard things in Computer Science: cache invalidation, naming things and off-by-1 errors.
+        ///  Alan> Random numbers should not be generated with a method chosen at random.
+        /// </text>
+        /// </file>
+        /// </summary>
         [TestMethod]
         public void GetFeedBy_WhereTweetsExists_ReturnsTweets()
         {
@@ -27,6 +37,14 @@ namespace CSharpTweeter.Domain.Tests
             var service = new FeedService("");
         }
 
+        /// <summary>
+        /// <file>
+        ///  <key>OneTweetPath</key>
+        ///  <text>         
+        ///  Alan> If you have a procedure with 10 parameters, you probably missed some.
+        /// </text>
+        /// </file>
+        /// </summary>
         [TestMethod]
         public void GetFeedBy_WhereUserHasOneTweet_ReturnsFeedWithOneTweet()
         {
@@ -46,26 +64,36 @@ namespace CSharpTweeter.Domain.Tests
 
         }
 
+        /// <summary>
+        /// <file>
+        ///  <key>TweetFilePath</key>
+        ///  <text>         
+        ///  Alan> If you have a procedure with 10 parameters, you probably missed some.
+        ///  Ward> There are only two hard things in Computer Science: cache invalidation, naming things and off-by-1 errors.
+        ///  Alan> Random numbers should not be generated with a method chosen at random.
+        /// </text>
+        /// </file>
+        /// </summary>
         [TestMethod]
         public void GetFeedBy_WhereUserHasTwoTweetsAndPersonHisFollowingHasOneTweet_ReturnsFeedWithThreeTweets()
         {
-            var user = new User
+            var alan = new User
             {
                 Name = "Alan",                
             };
 
-            var follower = new User
+            var ward = new User
             {
                 Name = "Ward"
             };
 
-            user.Following.AddUser(follower);
+            alan.Following.AddUser(ward);
 
             var filePath = ConfigurationManager.AppSettings["TweetFilePath"];
 
             var service = new FeedService(filePath);
 
-            var feed = service.GetFeedBy(user);
+            var feed = service.GetFeedBy(alan);
 
             Assert.IsNotNull(feed);
             Assert.AreEqual(3, feed.Items.Count);

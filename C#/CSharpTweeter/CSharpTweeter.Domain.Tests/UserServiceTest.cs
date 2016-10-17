@@ -10,6 +10,16 @@ namespace CSharpTweeter.Domain.Tests
     [TestClass]
     public class UserServiceTest
     {
+        /// <summary>
+        /// <file>
+        ///  <key>TweetFilePath</key>
+        ///  <text>         
+        ///  Alan> If you have a procedure with 10 parameters, you probably missed some.
+        ///  Ward> There are only two hard things in Computer Science: cache invalidation, naming things and off-by-1 errors.
+        ///  Alan> Random numbers should not be generated with a method chosen at random.
+        /// </text>
+        /// </file>
+        /// </summary>
         [TestMethod]
         public void GetUsers_WhereUsersExist_ReturnsMoreThan3Users()
         {
