@@ -20,7 +20,8 @@ namespace CSharpTweeter.Domain.Tests
         /// </summary>
         [TestMethod]
         public void GetFeedBy_WhereTweetsExists_ReturnsTweets()
-        {            
+        {
+            var bark = "woof";
             var user = new User();
             var filePath = ConfigurationManager.AppSettings["TweetFilePath"];
             
@@ -34,7 +35,7 @@ namespace CSharpTweeter.Domain.Tests
         [ExpectedException(typeof(FileNotFoundException))]
         public void Initialize_WhereInputIsNotValid_ThrowsException()
         {
-            var service = new FeedService("Tweet Branch Invalid Path");
+            var service = new FeedService("Other Path");
         }
 
         /// <summary>
