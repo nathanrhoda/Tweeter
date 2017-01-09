@@ -210,3 +210,8 @@ FakesAssemblies/
 GeneratedArtifacts/
 _Pvt_Extensions/
 ModelManifest.xml
+C#/CSharpTweeter/CSharpTweeter.Domain.Tests/FeedServiceTest.cs.orig
+C#/CSharpTweeter/CSharpTweeter.Domain.Tests/FeedServiceTest_BACKUP_32236.cs
+C#/CSharpTweeter/CSharpTweeter.Domain.Tests/FeedServiceTest_BASE_32236.cs
+C#/CSharpTweeter/CSharpTweeter.Domain.Tests/FeedServiceTest_LOCAL_32236.cs
+C#/CSharpTweeter/CSharpTweeter.Domain.Tests/FeedServiceTest_REMOTE_32236.cs

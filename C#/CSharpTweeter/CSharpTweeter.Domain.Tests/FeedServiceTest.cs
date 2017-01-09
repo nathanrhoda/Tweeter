@@ -34,7 +34,7 @@ namespace CSharpTweeter.Domain.Tests
         [ExpectedException(typeof(FileNotFoundException))]
         public void Initialize_WhereInputIsNotValid_ThrowsException()
         {
-            var service = new FeedService("Master Path");
+            var service = new FeedService("Other into Main");
         }
 
         /// <summary>
